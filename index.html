@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="modeX - Redefining modern fashion with bold, contemporary clothing. Shop our exclusive collections of streetwear, formal wear, and premium essentials.">
+    <title>modeX | Redefine Your Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">mode<span>X</span></div>
+            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <header id="navbar">
+        <nav class="nav-container">
+            <a href="#" class="logo">mode<span>X</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#collections" class="nav-link" data-section="collections">Collections</a></li>
+                <li><a href="#products" class="nav-link" data-section="products">Shop</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#lookbook" class="nav-link" data-section="lookbook">Lookbook</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-icon-btn" id="searchBtn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </button>
+                <button class="nav-icon-btn" id="cartBtn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <button class="search-close" id="searchClose">&times;</button>
+        <div class="search-content">
+            <h2>What are you looking for?</h2>
+            <div class="search-input-wrapper">
+                <input type="text" id="searchInput" placeholder="Search collections, products..." autocomplete="off">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <div class="search-suggestions">
+                <span class="search-tag">Jackets</span>
+                <span class="search-tag">Blazers</span>
+                <span class="search-tag">Denim</span>
+                <span class="search-tag">Hoodies</span>
+                <span class="search-tag">Dresses</span>
+                <span class="search-tag">New Arrivals</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <button class="cart-close-btn" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <p>Your bag is empty</p>
+                <a href="#products" class="btn btn-primary" id="shopNowBtn">Shop Now</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-full">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg">
+                <img src="images/hero_banner.png" alt="modeX Fashion Show" class="hero-bg-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge" data-animate="fade-up">SS &apos;26 Collection</div>
+                <h1 class="hero-title" data-animate="fade-up" data-delay="0.2">
+                    Redefine<br>
+                    <span class="hero-title-accent">Your Style</span>
+                </h1>
+                <p class="hero-subtitle" data-animate="fade-up" data-delay="0.4">Where bold meets sophistication. Discover the new era of contemporary fashion.</p>
+                <div class="hero-actions" data-animate="fade-up" data-delay="0.6">
+                    <a href="#collections" class="btn btn-primary btn-lg">Explore Collections</a>
+                    <a href="#lookbook" class="btn btn-outline btn-lg">View Lookbook</a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Marquee Section -->
+        <section class="marquee-section">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span>NEW ARRIVALS</span>
+                    <span class="marquee-dot">◆</span>
+                    <span>SPRING / SUMMER 2026</span>
+                    <span class="marquee-dot">◆</span>
+                    <span>FREE SHIPPING WORLDWIDE</span>
+                    <span class="marquee-dot">◆</span>
+                    <span>SUSTAINABLE FASHION</span>
+                    <span class="marquee-dot">◆</span>
+                    <span>NEW ARRIVALS</span>
+                    <span class="marquee-dot">◆</span>
+                    <span>SPRING / SUMMER 2026</span>
+                    <span class="marquee-dot">◆</span>
+                    <span>FREE SHIPPING WORLDWIDE</span>
+                    <span class="marquee-dot">◆</span>
+                    <span>SUSTAINABLE FASHION</span>
+                    <span class="marquee-dot">◆</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collections Section -->
+        <section id="collections" class="section collections-section">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-tag">Curated For You</span>
+                    <h2 class="section-title">Our <span class="accent">Collections</span></h2>
+                    <p class="section-subtitle">Explore our meticulously crafted collections designed for every occasion and personality.</p>
+                </div>
+                <div class="collections-grid">
+                    <div class="collection-card collection-card-large" data-animate="fade-up">
+                        <div class="collection-img-wrapper">
+                            <img src="images/product_jacket.png" alt="Urban Edge Collection" loading="lazy">
+                        </div>
+                        <div class="collection-info">
+                            <span class="collection-count">24 Pieces</span>
+                            <h3>Urban Edge</h3>
+                            <p>Bold streetwear for the fearless</p>
+                            <a href="#" class="collection-link">Shop Now <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                    <div class="collection-card" data-animate="fade-up" data-delay="0.1">
+                        <div class="collection-img-wrapper">
+                            <img src="images/product_blazer.png" alt="Luxe Minimal Collection" loading="lazy">
+                        </div>
+                        <div class="collection-info">
+                            <span class="collection-count">18 Pieces</span>
+                            <h3>Luxe Minimal</h3>
+                            <p>Refined elegance, effortlessly styled</p>
+                            <a href="#" class="collection-link">Shop Now <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                    <div class="collection-card" data-animate="fade-up" data-delay="0.2">
+                        <div class="collection-img-wrapper">
+                            <img src="images/product_dress.png" alt="Noir Couture Collection" loading="lazy">
+                        </div>
+                        <div class="collection-info">
+                            <span class="collection-count">12 Pieces</span>
+                            <h3>Noir Couture</h3>
+                            <p>After-dark sophistication</p>
+                            <a href="#" class="collection-link">Shop Now <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section products-section">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-tag">Shop The Edit</span>
+                    <h2 class="section-title">Best <span class="accent">Sellers</span></h2>
+                </div>
+                <div class="product-filters" data-animate="fade-up">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="outerwear">Outerwear</button>
+                    <button class="filter-btn" data-filter="tops">Tops</button>
+                    <button class="filter-btn" data-filter="bottoms">Bottoms</button>
+                    <button class="filter-btn" data-filter="dresses">Dresses</button>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Banner -->
+        <section class="feature-banner">
+            <div class="container">
+                <div class="feature-grid" data-animate="fade-up">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </div>
+                        <h4>Free Shipping</h4>
+                        <p>On orders over $150</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h4>Secure Payment</h4>
+                        <p>100% secure checkout</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
+                        <h4>Easy Returns</h4>
+                        <p>30-day return policy</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <h4>Made With Love</h4>
+                        <p>Ethically crafted</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image" data-animate="fade-right">
+                        <img src="images/product_blazer.png" alt="About modeX" loading="lazy">
+                        <div class="about-image-accent"></div>
+                    </div>
+                    <div class="about-content" data-animate="fade-left">
+                        <span class="section-tag">Our Story</span>
+                        <h2 class="section-title">Fashion That <span class="accent">Speaks</span></h2>
+                        <p>At <strong>modeX</strong>, we believe clothing is more than fabric — it's a language. Founded in 2020, we set out to create a brand that bridges the gap between high fashion and everyday wearability.</p>
+                        <p>Every piece in our collection is designed with intention, crafted from premium sustainable materials, and built to make you feel extraordinary. We don't follow trends — we set them.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number" data-count="50">0</span><span class="stat-suffix">K+</span>
+                                <span class="stat-label">Happy Customers</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" data-count="200">0</span><span class="stat-suffix">+</span>
+                                <span class="stat-label">Unique Designs</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" data-count="35">0</span><span class="stat-suffix">+</span>
+                                <span class="stat-label">Countries</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lookbook Section -->
+        <section id="lookbook" class="section lookbook-section">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-tag">Visual Stories</span>
+                    <h2 class="section-title">The <span class="accent">Lookbook</span></h2>
+                    <p class="section-subtitle">A visual journey through our latest designs. Hover to explore.</p>
+                </div>
+                <div class="lookbook-grid" data-animate="fade-up">
+                    <div class="lookbook-item lookbook-item-tall">
+                        <img src="images/product_jacket.png" alt="Urban Look" loading="lazy">
+                        <div class="lookbook-overlay">
+                            <span class="lookbook-tag">Urban Edge</span>
+                            <h3>Street Rebel</h3>
+                        </div>
+                    </div>
+                    <div class="lookbook-item">
+                        <img src="images/product_hoodie.png" alt="Casual Look" loading="lazy">
+                        <div class="lookbook-overlay">
+                            <span class="lookbook-tag">Essentials</span>
+                            <h3>Morning Flow</h3>
+                        </div>
+                    </div>
+                    <div class="lookbook-item">
+                        <img src="images/product_dress.png" alt="Evening Look" loading="lazy">
+                        <div class="lookbook-overlay">
+                            <span class="lookbook-tag">Noir Couture</span>
+                            <h3>Night Bloom</h3>
+                        </div>
+                    </div>
+                    <div class="lookbook-item lookbook-item-wide">
+                        <img src="images/hero_banner.png" alt="Runway Look" loading="lazy">
+                        <div class="lookbook-overlay">
+                            <span class="lookbook-tag">Runway</span>
+                            <h3>SS &apos;26 Showcase</h3>
+                        </div>
+                    </div>
+                    <div class="lookbook-item">
+                        <img src="images/product_denim.png" alt="Denim Look" loading="lazy">
+                        <div class="lookbook-overlay">
+                            <span class="lookbook-tag">Denim Edit</span>
+                            <h3>Raw & Refined</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials-section">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-tag">What They Say</span>
+                    <h2 class="section-title">Customer <span class="accent">Love</span></h2>
+                </div>
+                <div class="testimonials-slider" data-animate="fade-up">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p>"modeX has completely transformed my wardrobe. The quality and fit are exceptional — I can't imagine shopping anywhere else."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">AR</div>
+                                <div>
+                                    <strong>Ava Rodriguez</strong>
+                                    <span>Fashion Blogger</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p>"The leather jacket from Urban Edge is hands down the best piece I own. Perfectly crafted, buttery soft, and turns heads everywhere."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">JK</div>
+                                <div>
+                                    <strong>James Kim</strong>
+                                    <span>Creative Director</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p>"Finally, a brand that combines sustainability with stunning design. Every piece feels luxurious without the guilt. Absolutely obsessed!"</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">SL</div>
+                                <div>
+                                    <strong>Sarah Liu</strong>
+                                    <span>Entrepreneur</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-nav">
+                        <button class="testimonial-btn" id="prevTestimonial" aria-label="Previous">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <div class="testimonial-dots" id="testimonialDots"></div>
+                        <button class="testimonial-btn" id="nextTestimonial" aria-label="Next">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="section newsletter-section">
+            <div class="container">
+                <div class="newsletter-wrapper" data-animate="fade-up">
+                    <div class="newsletter-content">
+                        <span class="section-tag">Stay Updated</span>
+                        <h2 class="section-title">Join The <span class="accent">Movement</span></h2>
+                        <p>Subscribe to get exclusive access to new drops, flash sales, and style tips — right to your inbox.</p>
+                    </div>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Enter your email" required id="newsletterEmail">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                        <p class="newsletter-note">No spam, unsubscribe anytime. We respect your privacy.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title">Contact <span class="accent">Us</span></h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info" data-animate="fade-right">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>123 Fashion Avenue<br>New York, NY 10001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@modex.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-socials">
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Pinterest">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.19-.78 1.22-5.17 1.22-5.17s-.31-.62-.31-1.54c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .89-.57 2.23-.86 3.47-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.27-1.95 3.27-4.77 0-2.49-1.79-4.23-4.35-4.23-2.96 0-4.7 2.22-4.7 4.52 0 .9.34 1.86.77 2.38.08.1.09.19.07.29-.08.33-.26 1.04-.29 1.19-.05.19-.15.23-.34.14-1.25-.58-2.03-2.42-2.03-3.89 0-3.16 2.3-6.07 6.62-6.07 3.47 0 6.17 2.47 6.17 5.78 0 3.45-2.17 6.22-5.19 6.22-1.01 0-1.97-.53-2.29-1.15l-.62 2.37c-.22.87-.83 1.96-1.24 2.63.93.29 1.92.44 2.95.44 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm" data-animate="fade-left">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="contactName" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="contactEmail" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contactSubject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">mode<span>X</span></a>
+                    <p>Redefining contemporary fashion. Bold, sustainable, unapologetically you.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Sale</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 modeX. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span id="toastMessage">Item added to bag!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Chatbase Chatbot -->
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "bu58XtoxUt-rJiNx6XYLI",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="bu58XtoxUt-rJiNx6XYLI"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html>
